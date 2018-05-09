@@ -1,0 +1,19 @@
+{
+  "name": "gvarandas.github.io",
+  "version": "0.1.0",
+  "author": "Guilherme Varandas <jgvarandas@gmail.com> (https://gvarandas.github.io)",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "https://gvarandas.github.io",
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
