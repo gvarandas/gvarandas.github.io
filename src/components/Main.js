@@ -12,6 +12,19 @@ const MainContainer = styled.main`
 
 const MainTitle = styled.h1`
   font-size: 8rem;
+  text-align: center;
+
+  @media (max-width: 768px)  {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 7rem;
+  }
+
+  @media (max-width: 380px)  {
+    font-size: 6rem;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 `;
 
 const colorTransition = keyframes`
@@ -29,18 +42,27 @@ const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 768px)  {
+    margin: 40px 20px;
+  }
 `;
 
 const PictureContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 40px;
+  margin: 0 20px;
 `;
 
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: row;
+  margin: 0 20px;
+
+  @media (max-width: 768px)  {
+    flex-direction: column;
+  }
 `;
 
 const Image = styled.img`

@@ -31,7 +31,7 @@ const AppContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  min-width: 100vw;
+  /* min-width: 100vw; */
 `;
 
 const App = () => (

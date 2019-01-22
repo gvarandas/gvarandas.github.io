@@ -9,7 +9,7 @@ const FooterContainer = styled.footer`
   margin: 20px;
 
   span {
-    margin-right: 40px;
+    margin: 0 20px;
 
     a {
       font-size: 1.25rem;
@@ -24,6 +24,12 @@ const FooterContainer = styled.footer`
       :hover {
         color: darkorange;
       }
+    }
+  }
+
+  @media (max-width: 380px)  {
+    span a {
+      font-size: 1rem;
     }
   }
 `;
