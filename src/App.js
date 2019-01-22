@@ -1,14 +1,16 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import Header from './components/Header';
+// import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
 const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
   * {
     box-sizing: border-box;
-    font-family: "Gilroy", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    font-family: "Gilroy", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif;
   }
