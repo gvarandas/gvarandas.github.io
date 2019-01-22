@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import ProfilePicture from '../images/Guilherme.png';
 
 const MainContainer = styled.main`
   display: flex;
@@ -13,12 +14,55 @@ const MainTitle = styled.h1`
   font-size: 8rem;
 `;
 
+const colorTransition = keyframes`
+  0% { color: black; }
+  50% { color: darkorange; }
+  100% { color: black; }
+`;
+
+const OrangeTitle = styled.span`
+  color: darkorange;
+  animation: ${colorTransition} 10s infinite linear;
+`;
+
+const DescriptionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const PictureContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 40px;
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const Image = styled.img`
+  width: 200px;
+  height: 200px;
+`;
+
 const Main = () => (
   <MainContainer>
-    <MainTitle>HELLO THERE</MainTitle>
-    <p>My name is Guilherme Varandas and I'm a Brazilian fullstack developer.</p>
-    <p>With a diverse set of skills, ranging from HTML + CSS and, mainly, JavaScript, I LOVE to build cool stuff.</p>
-    <p>From component bits using React, Ember or Angular, all the way to scalable APIs.</p>
+    <MainTitle>
+      HELLO <OrangeTitle>THERE</OrangeTitle>
+    </MainTitle>
+    <ContentContainer>
+      <PictureContainer>
+        <Image src={ProfilePicture} />
+      </PictureContainer>
+      <DescriptionContainer>
+        <p>My name is <b>Guilherme Varandas</b> and I build things.</p>
+        <p>With a diverse set of skills, including HTML, CSS and JavaScript, I LOVE to work with cool stuff.</p>
+        <p>From component bits using React, Vue or Angular, all the way to scalable APIs.</p>
+      </DescriptionContainer>
+    </ContentContainer>
   </MainContainer>
 );
 

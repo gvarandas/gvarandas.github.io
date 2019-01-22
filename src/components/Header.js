@@ -12,6 +12,7 @@ const HeaderContainer = styled.header`
     margin-right: 20px;
 
     a {
+      font-size: 1.25rem;
       font-weight: bold;
       text-decoration: none;
 

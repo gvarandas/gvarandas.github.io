@@ -12,6 +12,7 @@ const FooterContainer = styled.footer`
     margin-right: 40px;
 
     a {
+      font-size: 1.25rem;
       color: #000;
       font-weight: bold;
       text-decoration: none;

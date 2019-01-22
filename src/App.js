@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
 
 const AppContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: stretch;
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
