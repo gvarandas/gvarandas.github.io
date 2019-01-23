@@ -2,9 +2,9 @@ import React from 'react';
 
 const MEDIUM_API_ADDRESS = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@gvarandas';
 
-function replicate(element, number) {
-  return new Array(number).fill(element[0]);
-}
+// function replicate(element, number) {
+//   return new Array(number).fill(element[0]);
+// }
 
 class PostsContainer extends React.Component {
   state = {
@@ -18,7 +18,8 @@ class PostsContainer extends React.Component {
     .then(response => {
       const posts = response.items.filter(item => item.categories.length);
       this.setState({
-        posts: replicate(posts, 10),
+        // posts: replicate(posts, 10),
+        posts: posts,
         isLoading: false,
       });
     })
