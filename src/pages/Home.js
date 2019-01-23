@@ -15,7 +15,7 @@ const MainTitle = styled.h1`
   line-height: 1;
   text-align: center;
 
-  @media (max-width: 768px)  {
+  @media (max-width: 800px)  {
     margin-left: 15px;
     margin-right: 15px;
     font-size: 7rem;

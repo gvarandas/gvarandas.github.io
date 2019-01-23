@@ -25,7 +25,7 @@ const HeaderContainer = styled.nav`
     }
   }
 
-  @media (max-width: 380px)  {
+  @media (max-width: 768px)  {
     padding: 20px 0;
   }
 `;
