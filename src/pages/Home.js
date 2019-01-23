@@ -12,6 +12,7 @@ const MainContainer = styled.main`
 
 const MainTitle = styled.h1`
   font-size: 8rem;
+  line-height: 1;
   text-align: center;
 
   @media (max-width: 768px)  {
@@ -46,6 +47,12 @@ const DescriptionContainer = styled.div`
   @media (max-width: 768px)  {
     margin: 40px 20px;
   }
+
+  @media (max-width: 380px)  {
+    p {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 const PictureContainer = styled.div`
@@ -70,7 +77,7 @@ const Image = styled.img`
   height: 200px;
 `;
 
-const Main = () => (
+const Home = () => (
   <MainContainer>
     <MainTitle>
       HELLO <OrangeTitle>THERE</OrangeTitle>
@@ -81,11 +88,11 @@ const Main = () => (
       </PictureContainer>
       <DescriptionContainer>
         <p>My name is <b>Guilherme Varandas</b> and I build things.</p>
-        <p>With a diverse set of skills, including HTML, CSS and JavaScript, I LOVE to work with cool stuff.</p>
+        <p>With a diverse set of skills, including <i>HTML</i>, <i>CSS</i> and <i>JavaScript</i>, I <b>LOVE</b> to work with cool stuff.</p>
         <p>From component bits using React, Vue or Angular, all the way to scalable APIs.</p>
       </DescriptionContainer>
     </ContentContainer>
   </MainContainer>
 );
 
-export default Main;
+export default Home;

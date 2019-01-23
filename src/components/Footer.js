@@ -34,18 +34,28 @@ const FooterContainer = styled.footer`
   }
 `;
 
+const FooterBorder = styled.div`
+  width: 500px;
+  max-width: 100%;
+  border-top: 2px solid darkorange;
+  align-self: center;
+`;
+
 const Footer = () => (
-  <FooterContainer>
-    <span>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/jirotheone">TWITTER</a>
-    </span>
-    <span>
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/gvarandas">GITHUB</a>
-    </span>
-    <span>
-      <a target="_blank" rel="noopener noreferrer" href="mailto:jgvarandas@gmail.com">EMAIL</a>
-    </span>
-  </FooterContainer>
+  <>
+    <FooterBorder />
+    <FooterContainer>
+      <span>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/jirotheone">TWITTER</a>
+      </span>
+      <span>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/gvarandas">GITHUB</a>
+      </span>
+      <span>
+        <a target="_blank" rel="noopener noreferrer" href="mailto:jgvarandas@gmail.com">EMAIL</a>
+      </span>
+    </FooterContainer>
+  </>
 );
 
 export default Footer;

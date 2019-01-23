@@ -1,9 +1,12 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import { Router } from "@reach/router"
 
-// import Header from './components/Header';
-import Main from './components/Main';
+import Header from './components/Header';
 import Footer from './components/Footer';
+
+import Home from './pages/Home';
+import Posts from './pages/Posts';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
@@ -31,15 +34,22 @@ const AppContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  /* min-width: 100vw; */
+`;
+
+const StyledRouter = styled(Router)`
+  display: flex;
+  flex: 1;
 `;
 
 const App = () => (
   <>
     <GlobalStyle />
     <AppContainer>
-      {/* <Header /> */}
-      <Main />
+      <Header />
+      <StyledRouter primary={false}>
+        <Home path="/" default />
+        <Posts path="blog" />
+      </StyledRouter>
       <Footer />
     </AppContainer>
   </>
