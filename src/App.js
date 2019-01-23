@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import { Router } from "@reach/router"
+import { HashRouter as Router, Route } from "react-router-dom";
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const AppContainer = styled.div`
+const Container = styled.div`
   display: flex;
   align-items: stretch;
   flex-direction: column;
@@ -36,22 +36,17 @@ const AppContainer = styled.div`
   min-height: 100vh;
 `;
 
-const StyledRouter = styled(Router)`
-  display: flex;
-  flex: 1;
-`;
-
 const App = () => (
   <>
     <GlobalStyle />
-    <AppContainer>
-      <Header />
-      <StyledRouter primary={false}>
-        <Home path="/" default />
-        <Posts path="blog" />
-      </StyledRouter>
-      <Footer />
-    </AppContainer>
+    <Router>
+      <Container>
+        <Header />
+        <Route path="/" exact component={Home} />
+        <Route path="/blog" component={Posts} />
+        <Footer />
+      </Container>
+    </Router>
   </>
 );
 

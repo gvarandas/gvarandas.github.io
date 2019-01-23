@@ -12,18 +12,24 @@ class PostsContainer extends React.Component {
     posts: [],
   };
 
+  fetchController = new AbortController();
+
   componentDidMount() {
-    fetch(MEDIUM_API_ADDRESS)
-    .then(response => response.json())
-    .then(response => {
-      const posts = response.items.filter(item => item.categories.length);
-      this.setState({
-        // posts: replicate(posts, 10),
-        posts: posts,
-        isLoading: false,
-      });
-    })
-    .catch(error => console.log('error retrieving posts', error));
+    fetch(MEDIUM_API_ADDRESS, { signal: this.fetchController.signal })
+      .then(response => response.json())
+      .then(response => {
+        const posts = response.items.filter(item => item.categories.length);
+        this.setState({
+          // posts: replicate(posts, 10),
+          posts: posts,
+          isLoading: false,
+        });
+      })
+      .catch(error => console.log('error retrieving posts:', error));
+  }
+
+  componentWillUnmount() {
+    this.fetchController.abort();
   }
 
   render() {

@@ -20,7 +20,7 @@ const PostLink = styled.a`
 
 const CardContainer = styled.article`
   max-width: 300px;
-  max-height: 350px;
+  max-height: 400px;
   text-align: center;
   margin: 20px 5px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
@@ -47,7 +47,7 @@ const PostResume = styled.p`
 
 const PostCard = ({ post }) => (
   <PostLink href={post.guid} target="_blank" rel="noopener noreferrer">
-    <CardContainer key={post.guid}>
+    <CardContainer>
       <PostThumb src={post.thumbnail} />
       <ContentContainer>
         <PostTitle>{shortenText(post.title)}</PostTitle>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from '@reach/router';
+import { Link } from 'react-router-dom';
 
 const HeaderContainer = styled.nav`
   display: flex;
@@ -10,8 +10,8 @@ const HeaderContainer = styled.nav`
   padding: 20px 40px;
 
   a {
-    margin-right: 20px;
     color: black;
+    margin-right: 20px;
     font-size: 1.25rem;
     font-weight: bold;
     text-decoration: none;
@@ -37,14 +37,17 @@ const HeaderBorder = styled.div`
   align-self: flex-end;
 `;
 
-const Header = () => (
-  <>
-    <HeaderContainer>
-      <Link to="/">HOME</Link>
-      <Link to="/blog">BLOG</Link>
-    </HeaderContainer>
-    <HeaderBorder />
-  </>
-);
+const Header = ({ activeRoute }) => {
+  console.log('active', String(activeRoute === '/'));
+  return (
+    <>
+      <HeaderContainer>
+        <Link to="/">HOME</Link>
+        <Link to="/blog">BLOG</Link>
+      </HeaderContainer>
+      <HeaderBorder />
+    </>
+  );
+}
 
 export default Header;

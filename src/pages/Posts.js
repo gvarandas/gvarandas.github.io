@@ -50,7 +50,7 @@ const Posts = () => (
     <PostsTitle>BLOG POSTS</PostsTitle>
       <PostList>
       <PostsContainer placeholder={PostsPlaceholder}>
-        {posts => posts.map(post => <PostCard post={post} />)}
+        {posts => posts.map(post => <PostCard key={post.guid} post={post} />)}
       </PostsContainer>
       </PostList>
   </PostsFrame>
