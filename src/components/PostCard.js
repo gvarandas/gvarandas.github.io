@@ -51,18 +51,21 @@ const PostBadge = styled.span`
   border-radius: 5px;
 `;
 
-const PostCard = ({ post }) => (
-  <PostLink href={post.guid} target="_blank" rel="noopener noreferrer">
-    <CardContainer>
-      <PostThumb src={post.thumbnail} />
-      <ContentContainer>
-        <PostTitle>{shortenText(post.title)}</PostTitle>
-        <CategoriesContainer>
-          {post.categories.map(category => <PostBadge key={category}>{category}</PostBadge>)}
-        </CategoriesContainer>
-      </ContentContainer>
-    </CardContainer>
-  </PostLink>
-);
+const PostCard = ({ post }) => {
+  const shortPostTitle = shortenText(post.title);
+  return (
+    <PostLink href={post.guid} target="_blank" rel="noopener noreferrer">
+      <CardContainer>
+        <PostThumb src={post.thumbnail} alt={`${shortPostTitle} thumbnail`} />
+        <ContentContainer>
+          <PostTitle>{shortPostTitle}</PostTitle>
+          <CategoriesContainer>
+            {post.categories.map(category => <PostBadge key={category}>{category}</PostBadge>)}
+          </CategoriesContainer>
+        </ContentContainer>
+      </CardContainer>
+    </PostLink>
+  );
+}
 
 export default PostCard;

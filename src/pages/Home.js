@@ -84,7 +84,7 @@ const Home = () => (
     </MainTitle>
     <ContentContainer>
       <PictureContainer>
-        <Image src={ProfilePicture} alt="Guilherme's avatar" />
+        <Image src={ProfilePicture} alt="guilherme's avatar" />
       </PictureContainer>
       <DescriptionContainer>
         <p>My name is <b>Guilherme Varandas</b> and I build things.</p>
