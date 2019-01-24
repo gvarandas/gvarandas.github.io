@@ -37,8 +37,7 @@ const HeaderBorder = styled.div`
   align-self: flex-end;
 `;
 
-const Header = ({ activeRoute }) => {
-  console.log('active', String(activeRoute === '/'));
+const Header = () => {
   return (
     <>
       <HeaderContainer>

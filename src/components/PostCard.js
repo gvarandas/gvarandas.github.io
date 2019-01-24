@@ -7,12 +7,6 @@ function shortenText(text, startingPoint, maxLength) {
     text;
 }
 
-function toText(node) {
-  let tag = document.createElement('div');
-  tag.innerHTML = node;
-  return tag.innerText;
-}
-
 const PostLink = styled.a`
   color: black;
   text-decoration: none;
@@ -40,9 +34,21 @@ const PostTitle = styled.span`
   font-weight: bold;
 `;
 
-const PostResume = styled.p`
-  font-size: 1rem;
-  padding: 0 10px;
+const CategoriesContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px 5px;
+`;
+
+const PostBadge = styled.span`
+  font-size: 0.5rem;
+  font-weight: bold;
+  padding: 5px;
+  margin: 4px 2px;
+  background-color: #eee;
+  border-radius: 5px;
 `;
 
 const PostCard = ({ post }) => (
@@ -51,7 +57,9 @@ const PostCard = ({ post }) => (
       <PostThumb src={post.thumbnail} />
       <ContentContainer>
         <PostTitle>{shortenText(post.title)}</PostTitle>
-        <PostResume>{'...' + shortenText(toText(post.content), 60, 300) + '...'}</PostResume>
+        <CategoriesContainer>
+          {post.categories.map(category => <PostBadge key={category}>{category}</PostBadge>)}
+        </CategoriesContainer>
       </ContentContainer>
     </CardContainer>
   </PostLink>

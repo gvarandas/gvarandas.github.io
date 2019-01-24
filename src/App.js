@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif;
   }
+  
   body {
     margin: 0;
     padding: 0;

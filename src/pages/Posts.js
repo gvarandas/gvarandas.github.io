@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import styled from 'styled-components';
 
-import PostsContainer from '../containers/PostsContainer';
-import PostCard from '../components/PostCard';
+const PostsContainer = React.lazy(() => import('../containers/PostsContainer'));
+const PostCard = React.lazy(() => import('../components/PostCard'));
+
 
 const PostsFrame = styled.div`
   display: flex;
@@ -49,9 +50,11 @@ const Posts = () => (
   <PostsFrame>
     <PostsTitle>BLOG POSTS</PostsTitle>
       <PostList>
-      <PostsContainer placeholder={PostsPlaceholder}>
-        {posts => posts.map(post => <PostCard key={post.guid} post={post} />)}
-      </PostsContainer>
+        <Suspense fallback={<div>Loading...</div>} maxDuration={1000}>
+          <PostsContainer placeholder={PostsPlaceholder}>
+            {posts => posts.map(post => <PostCard key={post.guid} post={post} />)}
+          </PostsContainer>
+        </Suspense>
       </PostList>
   </PostsFrame>
 );
