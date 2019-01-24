@@ -1,12 +1,16 @@
 {
-  "main.js": "/static/js/main.48a29cbf.chunk.js",
-  "main.js.map": "/static/js/main.48a29cbf.chunk.js.map",
-  "static/js/1.29a27f3d.chunk.js": "/static/js/1.29a27f3d.chunk.js",
-  "static/js/1.29a27f3d.chunk.js.map": "/static/js/1.29a27f3d.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
+  "main.js": "/static/js/main.8ff1f095.chunk.js",
+  "main.js.map": "/static/js/main.8ff1f095.chunk.js.map",
+  "static/js/1.2cd3f220.chunk.js": "/static/js/1.2cd3f220.chunk.js",
+  "static/js/1.2cd3f220.chunk.js.map": "/static/js/1.2cd3f220.chunk.js.map",
+  "static/js/2.d6f75867.chunk.js": "/static/js/2.d6f75867.chunk.js",
+  "static/js/2.d6f75867.chunk.js.map": "/static/js/2.d6f75867.chunk.js.map",
+  "static/js/3.f5015752.chunk.js": "/static/js/3.f5015752.chunk.js",
+  "static/js/3.f5015752.chunk.js.map": "/static/js/3.f5015752.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.a7493317.js",
+  "runtime~main.js.map": "/static/js/runtime~main.a7493317.js.map",
   "static/media/Guilherme.png": "/static/media/Guilherme.ec469932.png",
   "index.html": "/index.html",
-  "precache-manifest.0235ece00c987a34738e9253ea79176c.js": "/precache-manifest.0235ece00c987a34738e9253ea79176c.js",
+  "precache-manifest.64261a4696c5c65587945f0b217d647d.js": "/precache-manifest.64261a4696c5c65587945f0b217d647d.js",
   "service-worker.js": "/service-worker.js"
 }
