@@ -24,7 +24,7 @@ const PostList = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 `;
 
 const PlaceholderCard = styled.div`

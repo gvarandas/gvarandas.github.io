@@ -20,7 +20,7 @@ class PostsContainer extends React.Component {
       .then(response => {
         const posts = response.items.filter(item => item.categories.length);
         this.setState({
-          // posts: replicate(posts, 10),
+          // posts: replicate(posts, 11),
           posts: posts,
           isLoading: false,
         });

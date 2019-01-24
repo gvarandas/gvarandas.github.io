@@ -13,7 +13,7 @@ const PostLink = styled.a`
 `;
 
 const CardContainer = styled.article`
-  max-width: 300px;
+  max-width: 400px;
   max-height: 400px;
   text-align: center;
   margin: 20px 5px;
@@ -30,25 +30,32 @@ const ContentContainer = styled.div`
 `;
 
 const PostTitle = styled.span`
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
+
+  @media (max-width: 380px)  {
+    font-size: 1.25rem;
+  }
 `;
 
 const CategoriesContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin: 10px 5px;
 `;
 
 const PostBadge = styled.span`
-  font-size: 0.5rem;
-  font-weight: bold;
-  padding: 5px;
-  margin: 4px 2px;
+  font-size: 1rem;
+  padding: 5px 10px;
+  margin: 4px;
   background-color: #eee;
   border-radius: 5px;
+
+  @media (max-width: 380px)  {
+    font-size: 0.8rem;
+  }
 `;
 
 const PostCard = ({ post }) => {
