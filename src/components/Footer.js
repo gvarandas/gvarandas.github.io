@@ -27,7 +27,7 @@ const FooterContainer = styled.footer`
     }
   }
 
-  @media (max-width: 380px)  {
+  @media (max-width: 380px) {
     span a {
       font-size: 1rem;
     }
@@ -46,13 +46,31 @@ const Footer = () => (
     <FooterBorder />
     <FooterContainer>
       <span>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/jirotheone">TWITTER</a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.twitter.com/jgvarandas"
+        >
+          TWITTER
+        </a>
       </span>
       <span>
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/gvarandas">GITHUB</a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/gvarandas"
+        >
+          GITHUB
+        </a>
       </span>
       <span>
-        <a target="_blank" rel="noopener noreferrer" href="mailto:jgvarandas@gmail.com">EMAIL</a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="mailto:jgvarandas@gmail.com"
+        >
+          EMAIL
+        </a>
       </span>
     </FooterContainer>
   </>
