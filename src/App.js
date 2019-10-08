@@ -1,6 +1,11 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import { HashRouter as Router, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -27,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     background-color: #fff;
   }
-`
+`;
 
 const Container = styled.div`
   display: flex;
@@ -43,8 +48,11 @@ const App = () => (
     <Router>
       <Container>
         <Header />
-        <Route path="/" exact component={Home} />
-        <Route path="/blog" component={Posts} />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/blog" component={Posts} />
+          <Redirect to="/" />
+        </Switch>
         <Footer />
       </Container>
     </Router>
