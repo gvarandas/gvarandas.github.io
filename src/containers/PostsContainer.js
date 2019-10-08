@@ -9,8 +9,9 @@ const PostsContainer = ({ placeholder, children }) => {
   const fetchController = React.useRef(new AbortController());
 
   React.useEffect(() => {
+    const currentController = fetchController.current;
     setIsLoading(true);
-    fetch(MEDIUM_API_ADDRESS, { signal: fetchController.current.signal })
+    fetch(MEDIUM_API_ADDRESS, { signal: currentController.signal })
       .then(response => response.json())
       .then(response => {
         const posts = response.items.filter(item => item.categories.length);
@@ -19,7 +20,7 @@ const PostsContainer = ({ placeholder, children }) => {
       })
       .catch(error => console.log('error retrieving posts:', error));
 
-    return () => fetchController.current.abort();
+    return () => currentController.abort();
   }, []);
 
   return isLoading ? placeholder() : children(posts);
