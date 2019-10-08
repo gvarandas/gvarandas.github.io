@@ -15,13 +15,13 @@ const MainTitle = styled.h1`
   line-height: 1;
   text-align: center;
 
-  @media (max-width: 800px)  {
+  @media (max-width: 800px) {
     margin-left: 15px;
     margin-right: 15px;
     font-size: 7rem;
   }
 
-  @media (max-width: 380px)  {
+  @media (max-width: 380px) {
     font-size: 6rem;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -44,11 +44,11 @@ const DescriptionContainer = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  @media (max-width: 768px)  {
+  @media (max-width: 768px) {
     margin: 40px 20px;
   }
 
-  @media (max-width: 380px)  {
+  @media (max-width: 380px) {
     p {
       margin-bottom: 0;
     }
@@ -67,7 +67,7 @@ const ContentContainer = styled.div`
   flex-direction: row;
   margin: 0 20px;
 
-  @media (max-width: 768px)  {
+  @media (max-width: 768px) {
     flex-direction: column;
   }
 `;
@@ -84,12 +84,20 @@ const Home = () => (
     </MainTitle>
     <ContentContainer>
       <PictureContainer>
-        <Image src={ProfilePicture} alt="guilherme's avatar" />
+        <Image src={ProfilePicture} alt="Guilherme Varandas Avatar" />
       </PictureContainer>
       <DescriptionContainer>
-        <p>My name is <b>Guilherme Varandas</b> and I build things.</p>
-        <p>With a diverse set of skills, including <i>HTML</i>, <i>CSS</i> and <i>JavaScript</i>, I <b>LOVE</b> to work with cool stuff.</p>
-        <p>From component bits using React, Vue or Angular, all the way to scalable APIs.</p>
+        <p>
+          My name is <b>Guilherme Varandas</b> and I build things.
+        </p>
+        <p>
+          With a diverse set of skills, including <i>HTML</i>, <i>CSS</i> and{' '}
+          <i>JavaScript</i>, I <b>LOVE</b> to work with cool stuff.
+        </p>
+        <p>
+          From component bits using React, Vue or Angular, all the way to
+          scalable APIs.
+        </p>
       </DescriptionContainer>
     </ContentContainer>
   </MainContainer>
