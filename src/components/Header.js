@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const HeaderContainer = styled.nav`
   display: flex;
@@ -9,24 +9,28 @@ const HeaderContainer = styled.nav`
   align-self: stretch;
   padding: 20px 40px;
 
-  a {
-    color: black;
-    margin-right: 20px;
-    font-size: 1.25rem;
-    font-weight: bold;
-    text-decoration: none;
+  @media (max-width: 768px) {
+    padding: 20px 0;
+  }
+`;
 
-    :visited {
-      color: inherit;
-    }
+const StyledLink = styled(NavLink)`
+  color: black;
+  margin-right: 20px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
 
-    :hover {
-      color: darkorange;
-    }
+  :visited {
+    color: inherit;
   }
 
-  @media (max-width: 768px)  {
-    padding: 20px 0;
+  :hover {
+    color: darkorange;
+  }
+
+  &.active {
+    color: darkorange;
   }
 `;
 
@@ -41,12 +45,14 @@ const Header = () => {
   return (
     <>
       <HeaderContainer>
-        <Link to="/">HOME</Link>
-        <Link to="/blog">BLOG</Link>
+        <StyledLink exact to="/">
+          HOME
+        </StyledLink>
+        <StyledLink to="/blog">BLOG</StyledLink>
       </HeaderContainer>
       <HeaderBorder />
     </>
   );
-}
+};
 
 export default Header;
