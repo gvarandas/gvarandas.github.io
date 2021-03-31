@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { MediumPost } from '../types';
 
-function shortenText(text, startingPoint, maxLength) {
-  return text.length > maxLength ?
-    text.slice(startingPoint, maxLength) :
-    text;
+function shortenText(text: string, startingPoint = 0, maxLength = 0) {
+  return text.length > maxLength ? text.slice(startingPoint, maxLength) : text;
 }
 
 const PostLink = styled.a`
@@ -17,12 +16,15 @@ const CardContainer = styled.article`
   max-height: 400px;
   text-align: center;
   margin: 20px 5px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 `;
 
 const PostThumb = styled.img`
   width: 100%;
   height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 `;
 
 const ContentContainer = styled.div`
@@ -33,7 +35,7 @@ const PostTitle = styled.span`
   font-size: 1.5rem;
   font-weight: bold;
 
-  @media (max-width: 380px)  {
+  @media (max-width: 380px) {
     font-size: 1.25rem;
   }
 `;
@@ -53,12 +55,16 @@ const PostBadge = styled.span`
   background-color: #eee;
   border-radius: 5px;
 
-  @media (max-width: 380px)  {
+  @media (max-width: 380px) {
     font-size: 0.8rem;
   }
 `;
 
-const PostCard = ({ post }) => {
+interface Props {
+  post: MediumPost;
+}
+
+const PostCard = ({ post }: Props) => {
   const shortPostTitle = shortenText(post.title);
   return (
     <PostLink href={post.guid} target="_blank" rel="noopener noreferrer">
@@ -67,12 +73,14 @@ const PostCard = ({ post }) => {
         <ContentContainer>
           <PostTitle>{shortPostTitle}</PostTitle>
           <CategoriesContainer>
-            {post.categories.map(category => <PostBadge key={category}>{category}</PostBadge>)}
+            {post.categories.map((category) => (
+              <PostBadge key={category}>{category}</PostBadge>
+            ))}
           </CategoriesContainer>
         </ContentContainer>
       </CardContainer>
     </PostLink>
   );
-}
+};
 
 export default PostCard;

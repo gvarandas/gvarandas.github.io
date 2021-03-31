@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import styled from 'styled-components';
+import { usePosts } from '../hooks/usePosts';
 
-const PostsContainer = React.lazy(() => import('../containers/PostsContainer'));
 const PostCard = React.lazy(() => import('../components/PostCard'));
 
 const PostsFrame = styled.div`
@@ -45,17 +45,22 @@ const PostsPlaceholder = () => (
   </>
 );
 
-const Posts = () => (
-  <PostsFrame>
-    <PostsTitle>BLOG POSTS</PostsTitle>
-    <PostList>
-      <Suspense fallback={<div>Loading...</div>}>
-        <PostsContainer placeholder={PostsPlaceholder}>
-          {posts => posts.map(post => <PostCard key={post.guid} post={post} />)}
-        </PostsContainer>
-      </Suspense>
-    </PostList>
-  </PostsFrame>
-);
+const Posts = () => {
+  const { isLoading, posts } = usePosts();
+  return (
+    <PostsFrame>
+      <PostsTitle>BLOG POSTS</PostsTitle>
+      <PostList>
+        <Suspense fallback={<PostsPlaceholder />}>
+          {isLoading ? (
+            <PostsPlaceholder />
+          ) : (
+            posts.map((post) => <PostCard key={post.guid} post={post} />)
+          )}
+        </Suspense>
+      </PostList>
+    </PostsFrame>
+  );
+};
 
 export default Posts;

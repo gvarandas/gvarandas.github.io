@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import ProfilePicture from '../images/Guilherme.png';
+import ProfilePicturePNG from '../images/Guilherme.png';
+import ProfilePictureWEBP from '../images/Guilherme.webp';
 
 const MainContainer = styled.main`
   display: flex;
@@ -45,7 +46,7 @@ const DescriptionContainer = styled.div`
   justify-content: center;
 
   @media (max-width: 768px) {
-    margin: 40px 20px;
+    margin: 20px;
   }
 
   @media (max-width: 380px) {
@@ -75,6 +76,7 @@ const ContentContainer = styled.div`
 const Image = styled.img`
   width: 200px;
   height: 200px;
+  border-radius: 100px;
 `;
 
 const Home = () => (
@@ -84,7 +86,16 @@ const Home = () => (
     </MainTitle>
     <ContentContainer>
       <PictureContainer>
-        <Image src={ProfilePicture} alt="Guilherme Varandas Avatar" />
+        <picture>
+          <source type="image/webp" srcSet={ProfilePictureWEBP} />
+          <source type="image/jpeg" srcSet={ProfilePicturePNG} />
+          <Image
+            src={ProfilePicturePNG}
+            alt="Guilherme Varandas' Avatar"
+            width={200}
+            height={200}
+          />
+        </picture>
       </PictureContainer>
       <DescriptionContainer>
         <p>
