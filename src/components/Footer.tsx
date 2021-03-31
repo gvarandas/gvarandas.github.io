@@ -1,11 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const FooterContainer = styled.footer`
+const Container = styled.footer`
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  margin-bottom: 5px;
+`;
+
+const LinksContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-self: stretch;
   margin: 20px;
 
   span {
@@ -34,7 +40,11 @@ const FooterContainer = styled.footer`
   }
 `;
 
-const FooterBorder = styled.div`
+const Copyright = styled.small`
+  text-align: center;
+`;
+
+const Border = styled.div`
   width: 500px;
   max-width: 100%;
   border-top: 2px solid darkorange;
@@ -42,9 +52,9 @@ const FooterBorder = styled.div`
 `;
 
 const Footer = () => (
-  <>
-    <FooterBorder />
-    <FooterContainer>
+  <Container>
+    <Border />
+    <LinksContainer>
       <span>
         <a
           target="_blank"
@@ -72,8 +82,11 @@ const Footer = () => (
           EMAIL
         </a>
       </span>
-    </FooterContainer>
-  </>
+    </LinksContainer>
+    <Copyright>
+      &copy; Copyright {new Date().getFullYear()}, Guilherme Varandas
+    </Copyright>
+  </Container>
 );
 
 export default Footer;

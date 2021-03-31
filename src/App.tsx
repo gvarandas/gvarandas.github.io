@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #fefefe;
   }
 `;
 
